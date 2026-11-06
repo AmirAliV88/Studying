@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>☕️📚 درس بوخوووون</title>
+   <link rel="stylesheet" href="./static/Styles/Styles.css">
+   
+   <script>
+
+      try{
+         var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+         document.documentElement.dataset.theme=t;
+      }catch(e){}
+      
+   </script>
+
+</head>
+<body>
+
+
+
+
+   <header class="navbar">
+
+      <div class="controls glass">
+
+         <div class="battery" id="battery">
+            <img src="./static/Icons/battery.svg" class="icon imgicon" id="batteryIcon" alt="">
+            <span id="batteryLevel"></span>
+         </div>
+
+         <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="تغییر تم">
+            <img src="./static/Icons/moon.svg" alt="" class="icon" id="themeIcon">
+         </button>
+
+         <label class="switch" title="لیکویید">
+            <input type="checkbox" id="LiquidSwitch">
+            <span class="track"><span class="thumb"></span></span>
+         </label>
+
+      </div>
+      
+      <button class="Share glass">
+         <img src="./static/Icons/share.png" alt="Share">
+         <p id="cc"></p>
+      </button>
+
+      <button class="help-btn glass" id="helpBtn" type="button" aria-label="راهنما">?</button>
+
+   </header>
+
+
+
+   <main>
+
+
+      <section class="profile">
+
+         <div class="avatar-wrap">
+            <img class="avatar" id="avatar" alt="عکس پروفایل" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='38' r='18' fill='%23ffffff' fill-opacity='.65'/%3E%3Cpath d='M14 92c4-24 22-34 36-34s32 10 36 34z' fill='%23ffffff' fill-opacity='.65'/%3E%3C/svg%3E">
+            <button class="edit-btn glass" id="editBtn" type="button" aria-label="ادیت پروفایل">🎨</button>
+            <input type="file" id="fileInput" accept="image/*">
+         </div>
+
+         <div class="name-box" id="nameBox">
+            <div class="name" id="name" title="دابل‌کلیک یا نگه‌داشتن برای ادیت">user</div>
+         </div>
+    
+      </section>
+
+
+      <section class="days">
+
+
+         <div class="menu" id="menu" aria-label="روزها"></div>
+
+         <div class="add-bar">
+            <h3 id="dayTitle"></h3>
+            <button class="pill glass" id="addToggle" type="button"> + </button>
+         </div>
+
+
+         <div class="panel" id="panel"><div class="clip">
+
+            <form class="form-box glass" id="addForm" data-kind="test">
+
+               <div class="seg glass">
+                  <button type="button" class="on" data-kind="test">تست</button>
+                  <button type="button" data-kind="lesson">درس</button>
+               </div>
+
+               <div class="fields" style="margin-bottom:12px">
+                  <label class="f">تاریخ<input type="date" id="fDate" hidden></label>
+               </div>
+
+               <fieldset id="fsTest"><div class="fields">
+
+                  <label class="f">تست درس<input id="tLesson" type="text" required></label>
+                  <label class="f">درصد<input id="tPercent" type="number" min="0" max="100" step="any" required></label>
+                  <label class="f">درست <small>اختیاری</small><input id="tCorrect" type="number" min="0"></label>
+                  <label class="f">غلط <small>اختیاری</small><input id="tWrong" type="number" min="0"></label>
+                  <label class="f">خالی <small>اختیاری</small><input id="tBlank" type="number" min="0"></label>
+                  <label class="f">درست با منفی <small>اختیاری</small><input id="tNeg" type="number" step="any"></label>
+
+               </div></fieldset>
+
+               <fieldset id="fsLesson" disabled><div class="fields">
+                  <label class="f">نام درس<input id="lName" type="text" required></label>
+                  <label class="f">ساعت<input id="lHours" type="number" min="0" step="any" required></label>
+                  <label class="f">ساعت شروع <small>اختیاری</small><input id="lStart" type="time"></label>
+               </div></fieldset>
+
+               <button class="save" type="submit">save</button>
+
+            </form>
+
+         </div></div>
+
+
+         <div id="dayBody"></div>
+
+      </section>
+
+
+   </main>
+
+
+
+   <div class="overlay" id="overlay" aria-hidden="true">
+      <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+         <button class="close glass" id="closeBtn" type="button" aria-label="بستن">✕</button>
+
+         <br><br><br>
+
+         <h2>Main Help | راهنمای اصلی</h2>
+         <p>
+            این اپلیکیشن افلاینه یعنی فضای رقابتی نداره ، خودتی و پروفایل خودت منم تا جایی که بتونم برات اپشن و اپدیت میزارم ولی اگه رقابت دوست داری
+            یه گپ کنار این پروفایلت بزن. حالا چرا اینجا رقابتی نیست مشکل اینه که میتونم بنویسم ولی سرویس دهند ی هاست رایگان همیشگی پیدا نمیکنم ): .
+            راسی زیر ساخت هارو طوری طراحی کردم که حتی خودمم نمیدونم داری چی کار میکنی و واقعا پروفایل خود خودته.
+
+            <br><br>
+
+            این اپلیکیشن نه دانلود میخواد نه نصب فقط چند مگابایت اینترنت برای لود کردن و گرفتن اخرین اپدیت میخواد .
+         </p>
+
+         <br><br><br>
+
+         <h2>Your Profile | پروفایلت</h2>
+         <p>
+            یه عکس پروفایل داری که میتونی از تو گالری عوضش کنی و یه اسم زیرش داری که میتونی با دوبار کلید (دابل کلید) یا فشار دادن ادیتش کنی. 
+            که گفتم من زیر ساخت رو طوری طراحی کردم که خودمم نمیدونم چی گذاشتی.
+            (از دیدگاه فنی بگم که با localStorage هندل کردم که دیتا هایی که وارد میکنی فقط و فقط برای خودت باشه)
+         </p>
+
+         <br><br><br>
+
+         <h2>نوار سمت راست | Right Status bar</h2>
+         <p>
+            برای قشنگی برات باتری گذاشتم و سویچ دارک مود و لایت مود داری و سوال اینکه که سویچ دومیه برای کجاست؟ برای لیکویید گلس که جدید ترین 
+            گرافیکه (طراحی رفتار مایع جزو خفن ترین اپشن های مدرن روز هستش). حالا لیکویید چی کار میکنه؟ یکم اسکرول کنی میبینی بعضی باکس ها
+            از جمله خود این نوار بکگراند عجیبی دارن و جسم پشت سر خودشو گرد کرده که دقیقا همون رفتار مایع هستش که دنبالش هستن
+         </p>
+
+         <br><br><br>
+
+         <h3> اگه سوال دیگه داری بیا تلگرام @AV10010101 </h3>
+
+      </div>
+   </div>
+
+
+
+   <br><br><br><br><br>
+
+   <footer onclick="location.href='https://github.com/amiraliv88'"> Powered By <span>A∞</span> </footer>
+
+
+   <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="Glass" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+         <feImage x="0" y="0" width="420" height="280" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22280%22%20viewBox%3D%220%200%20420%20280%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22Y%22%20x1%3D%220%22%20x2%3D%220%22%20y1%3D%222%25%22%20y2%3D%2298%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230F0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23000%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22X%22%20x1%3D%222%25%22%20x2%3D%2298%25%22%20y1%3D%220%22%20y2%3D%220%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F00%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23000%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22280%22%20fill%3D%22%23808080%22%2F%3E%3Cg%20filter%3D%22blur(2px)%22%3E%3Crect%20width%3D%22420%22%20height%3D%22280%22%20fill%3D%22%23000080%22%2F%3E%3Crect%20width%3D%22420%22%20height%3D%22280%22%20fill%3D%22url(%23Y)%22%20style%3D%22mix-blend-mode%3Ascreen%22%2F%3E%3Crect%20width%3D%22420%22%20height%3D%22280%22%20fill%3D%22url(%23X)%22%20style%3D%22mix-blend-mode%3Ascreen%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%22412%22%20height%3D%22272%22%20rx%3D%2230%22%20ry%3D%2230%22%20fill%3D%22%23808080%22%20filter%3D%22blur(4px)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" result="displacementMap"></feImage>
+         <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="30" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+         <feColorMatrix type="matrix" result="displacedR" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"></feColorMatrix>
+         <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="28" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+         <feColorMatrix type="matrix" result="displacedG" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"></feColorMatrix>
+         <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="26" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+         <feColorMatrix type="matrix" result="displacedB" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"></feColorMatrix>
+         <feBlend in="displacedR" in2="displacedG" mode="screen" result="rg"></feBlend>
+         <feBlend in="rg" in2="displacedB" mode="screen"></feBlend>
+      </filter>
+   </svg>
+
+
+   <script src="./static/JS/Script.js"></script>
+
+</body>
+</html>

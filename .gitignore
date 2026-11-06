@@ -1,0 +1,16 @@
+db/
+db*/
+
+Test/
+Test*/
+test/
+test*/
+nodebug/
+Nodebug/
+debug/
+Debug/
+Bug/
+Bug*/
+
+.env
+desktop.ini
